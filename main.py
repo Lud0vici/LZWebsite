@@ -9,7 +9,7 @@ def add_no_sniff(response):
 
 @app.route("/")
 def serve_login_page():
-    response = send_from_directory('src', 'index.html')
+    response = send_from_directory('src', 'about.html')
     add_no_sniff(response)
     return response
 
@@ -44,7 +44,11 @@ def serve_javascript_page():
     add_no_sniff(response)
     return response
 
+@app.route("/profile-pic-linkedin.jpg")
+def serve_profile_pic():
+    response = send_from_directory('public', 'profile-pic-linkedin.jpg')
+    add_no_sniff(response)
+    return response
+
 if __name__ == "__main__":
     app.run()
-
-#hello
